@@ -1,8 +1,4 @@
 {
-  "presets": [
-    "vue-app"
-  ],
-  "plugins": [
-    "transform-flow-strip-types"
-  ]
+    "presets": ["@vue/app"],
+    "plugins": ["transform-flow-strip-types"]
 }

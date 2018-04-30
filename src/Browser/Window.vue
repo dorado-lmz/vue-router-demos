@@ -81,13 +81,13 @@ export default {
       if (!('router' in App)) {
         App.router = new Router({})
       }
-      
+
       const options = App.router.options
       options.mode ='abstract'
       options.fallback = false
 
       const router = this.router = App.router = new Router(options)
-      
+
       router.history.index = 0
       router.afterEach((to) => {
         this.$nextTick(() => {
@@ -152,7 +152,7 @@ export default {
 .page {
   a.router-link-exact-active {
     color: red !important;
-  } 
+  }
   a.router-link-active {
     color: blue;
   }
@@ -160,7 +160,7 @@ export default {
     a {
       color: red !important;
     }
-  } 
+  }
   .router-link-active {
     a {
       color: blue;

@@ -1,4 +1,4 @@
-import { AbstractHistory } from 'vue-router/src/history/abstract'
+import { AbstractHistory } from 'vue-router'
 
 export class MemoryHistory extends AbstractHistory {
   constructor(context, router, base) {

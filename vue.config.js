@@ -1,20 +1,24 @@
-const express = require('express')
-
 module.exports = {
-  webpack(config) {
-    config.module.rules.push({
-      test: /\.js$/,
-      use: 'babel-loader',
-      include: [/node_modules\/vue-router/]
-    })
-    config.devtool = 'source-map'
-    config.resolve = config.resolve || {}
-    config.resolve.alias = config.resolve.alias || {}
-    config.resolve.alias['vue$'] = 'vue/dist/vue.esm.js'
-
-    return config
-  },
-  setup (app) {
-    app.use('/examples', express.static('examples'))
-  }
-}
+    configureWebpack: () => {
+        return {
+            resolve: {
+                alias: {
+                    vue$: 'vue/dist/vue.js',
+                    'vue-router': 'vue-router/dist/vue-router.esm.js'
+                }
+            },
+            module: {
+                rules: [
+                    {
+                        test: /\.js$/,
+                        use: [
+                            {
+                                loader: "babel-loader"
+                            }
+                        ]
+                    }
+                ]
+            }
+        };
+    }
+};

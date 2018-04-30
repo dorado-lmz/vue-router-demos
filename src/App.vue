@@ -1,7 +1,7 @@
 <template>
 <div class="columns app">
   <ul class="sidebar column is-1-desktop is-12-mobile">
-    <li v-for="example in examples" :key="example">
+    <li v-for="example in examples" :key="example.name">
       <router-link
        :to="{ name: 'example', params: { example: example.slug || example.name }}"
         active-class="is-active"
